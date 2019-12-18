@@ -1,20 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Headers city="南京" />
+    <div class="content-wrapper">
+      <ShopList />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { State, Action } from "vuex-class";
+import Headers from './components/Header.vue';
+import ShopList from './components/ShopList.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Headers,
+    ShopList
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  @Action initAjax: () => void;
+  mounted() {
+    this.initAjax();
+  }
+}
 </script>
 
 <style>
@@ -22,8 +32,11 @@ export default class App extends Vue {}
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.content-wrapper {
+  padding-top: 50px;
 }
 </style>
