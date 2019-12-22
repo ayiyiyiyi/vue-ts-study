@@ -7,13 +7,17 @@ Vue.use(Vuex);
 interface State {
     login: boolean,
     searchVal: string,
+    banners: GlobalVal.Banner[],
+    ads: GlobalVal.Ads[],
     shops: GlobalVal.Shop[]
 }
 
 let state: State = {
     login: false,
     searchVal: '',
-    shops: []
+    shops: [],
+    ads: [],
+    banners: []
 }
 
 export default new Vuex.Store({

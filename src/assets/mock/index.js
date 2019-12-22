@@ -7,18 +7,18 @@ import shops from './shop_list'
 
 // modules
 Mock
-  .mock('/modules', 'get', () => {
+  .mock('/banner', 'get', () => {
     return {
       code: 200,
-      result: modules
+      data: modules
     }
   })
 
   // headline
-  .mock('/headline', 'get', () => {
+  .mock('/advertising', 'get', () => {
     return {
       code: 200,
-      result: headline
+      data: headline
     }
   })
 
@@ -26,7 +26,7 @@ Mock
   .mock('/activity', 'get', () => {
     return {
       code: 200,
-      result: board
+      data: board
     }
   })
 
@@ -34,7 +34,7 @@ Mock
   .mock('/supersale', 'get', () => {
     return {
       code: 200,
-      result: supersale
+      data: supersale
     }
   })
 
@@ -42,6 +42,6 @@ Mock
   .mock('/shops', 'get', () => {
     return {
       code: 200,
-      result: shops
+      data: shops
     }
   })

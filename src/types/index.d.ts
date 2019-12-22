@@ -11,8 +11,18 @@ declare namespace GlobalVal {
         priceOld: number,
         count: string
     }
+    interface Banner {
+        url: string,
+        imgUrl: string,
+        name: string
+    }
+    interface Ads {
+        url: string,
+        imgUrl: string,
+        title: string
+    }
     interface AjaxResponse {
-        result: any,
+        data: any,
         code: number,
         msg?: string
     }
